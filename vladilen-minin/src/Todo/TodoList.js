@@ -1,5 +1,6 @@
 import React from 'react';
-import TodoItem from './TodoItem'
+import TodoItem from './TodoItem';
+import PropTypes from 'prop-types';
 
 // инлайн стилизация
 const style = {
@@ -10,10 +11,20 @@ const style = {
     }
 }
 
-export default function TodoList(props) {
+function TodoList(props) {
     return <ul style={style.ul}>
         {props.todos.map((todo, index) => {
-            return <TodoItem todo={todo} key={todo.id} index={index} />
+            return <TodoItem todo={todo} key={todo.id} index={index.toString()} />
         })}
     </ul>
 }
+
+// Валидация типов параметров от получаемого обьекта "props"
+TodoList.propTypes = {
+    // todos: PropTypes.array // получаемый тип обьекта
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired
+    // Массив состоянийщий из(arrayOf)обьектов
+    // флаг isRequired - указывает что необходим для работы компонента
+}
+
+export default TodoList;
