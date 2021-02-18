@@ -14,7 +14,7 @@ const style = {
 function TodoList(props) {
     return <ul style={style.ul}>
         {props.todos.map((todo, index) => {
-            return <TodoItem todo={todo} key={todo.id} index={index.toString()} />
+            return <TodoItem todo={todo} key={todo.id} index={index} />
         })}
     </ul>
 }
@@ -22,9 +22,10 @@ function TodoList(props) {
 // Валидация типов параметров от получаемого обьекта "props"
 TodoList.propTypes = {
     // todos: PropTypes.array // получаемый тип обьекта
-    todos: PropTypes.arrayOf(PropTypes.object).isRequired
-    // Массив состоянийщий из(arrayOf)обьектов
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    // arrayOf - Массив состоянийщий из(обьектов)
     // флаг isRequired - указывает что необходим для работы компонента
+    toogleOn: PropTypes.func.isRequired
 }
 
 export default TodoList;
