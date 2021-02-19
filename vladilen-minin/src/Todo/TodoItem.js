@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 //* Инлайнова стилизация через обьект
@@ -24,25 +24,30 @@ const style = {
     }
 }
 
-function TodoItem({ todo, index, changeOn }) {
-    return (
-        <li style={style.li}>
-            <span>
-                <input type="checkbox" style={style.input} />
-                <strong>{index + 1}</strong>&nbsp;
-                {todo.title}
-            </span>
+class TodoItem extends Component {
 
-            <button style={style.button} >&times;</button>
-        </li>
-    )
+    render() {
+        const { todo, index, toogleOn } = this.props;
+
+        return (
+            <li style={style.li}>
+                <span>
+                    <input type="checkbox" style={style.input} onChange={toogleOn} />
+                    <strong>{index + 1}</strong>&nbsp;
+                    {todo.title}
+                </span>
+
+                <button style={style.button} >&times;</button>
+            </li>
+        )
+    }
 }
 
 // Валидация типов параметров от получаемого обьекта "props"
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
     index: PropTypes.number,
-    changeOn: PropTypes.func.isRequired,
+    toogleOn: PropTypes.func.isRequired,
 }
 
 export default TodoItem;

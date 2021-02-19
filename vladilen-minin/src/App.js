@@ -13,6 +13,7 @@ export default function App() {
       if (todo.id === id) {
         todo.complete = !todo.complete
       }
+      console.log(todo)
       return todo
     })
   }
