@@ -13,15 +13,19 @@ export default function App() {
       if (todo.id === id) {
         todo.complete = !todo.complete
       }
-      console.log(todo)
       return todo
     })
   }
 
+  function onDeleted(id) {
+    console.log(id, `Deleted`)
+  }
+
+
   return (
     <div className="wrapper">
       <h1>Обучение React</h1>
-      <TodoList todos={todos} toogleOn={toogleTodo} />
+      <TodoList todos={todos} toogleOn={toogleTodo} onDeleted={onDeleted} />
     </div>
   );
 }

@@ -12,3 +12,23 @@ body {
   padding: 20px;
   width: 600px;
 }
+
+.done {
+  text-decoration: line-through;
+}
+
+.todo-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.todo-list__item span,
+.todo-list__item input,
+.todo-list__item button {
+  cursor: pointer;
+}

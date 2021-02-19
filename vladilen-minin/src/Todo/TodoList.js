@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
-import PropTypes from 'prop-types';
+import PropTypes, { element } from 'prop-types';
 
 // инлайн стилизация
 const style = {
@@ -11,12 +11,26 @@ const style = {
     }
 }
 
-function TodoList(props) {
-    return <ul style={style.ul}>
-        {props.todos.map((todo, index) => {
-            return <TodoItem todo={todo} key={todo.id} index={index} toogleOn={props.toogleOn} />
-        })}
-    </ul>
+function TodoList({ todos, toogleOn, onDeleted }) {
+
+    const element = todos.map((item, index) => {
+        const { id, ...itemData } = item;
+
+        return (
+            <TodoItem key={id}
+                index={index}
+                todo={itemData}
+                toogleOn={toogleOn}
+                onDeleted={() => onDeleted(id)}
+            />
+        )
+    })
+
+    return (
+        <ul style={style.ul}>
+            {element}
+        </ul>
+    )
 }
 
 // Валидация типов параметров от получаемого обьекта "props"
