@@ -20,7 +20,6 @@ function TodoList({ todos, toogleOn, onDeleted }) {
             <TodoItem key={id}
                 index={index}
                 todo={itemData}
-                toogleOn={toogleOn}
                 onDeleted={() => onDeleted(id)}
             />
         )
@@ -39,7 +38,6 @@ TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.object).isRequired,
     // arrayOf - Массив состоянийщий из(обьектов)
     // флаг isRequired - указывает что необходим для работы компонента
-    toogleOn: PropTypes.func.isRequired
 }
 
 export default TodoList;

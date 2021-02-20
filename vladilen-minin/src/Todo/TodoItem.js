@@ -52,7 +52,6 @@ class TodoItem extends Component {
                     <input type="checkbox"
                         checked={this.state.done}
                         style={style.input}
-                        onChange={toogleOn}
                     />
                     <strong>{index + 1}</strong>&nbsp;
                     {todo.title}
@@ -68,7 +67,6 @@ class TodoItem extends Component {
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
     index: PropTypes.number,
-    toogleOn: PropTypes.func.isRequired,
 }
 
 export default TodoItem;
