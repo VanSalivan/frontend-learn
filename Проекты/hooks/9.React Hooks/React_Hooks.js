@@ -32,10 +32,22 @@
 //     return () => cancelled = true;
 // }, [props.id]);
 
-//? 
-//* - 
-//* - 
-//* - 
+//? 102. Создание собственных хуков
+//* - Собственные хуки - любая функция которая начинается на useИмяХука и может использовать другие хуки
+// const useИмяКастомногоХука = (ID) => {
+//     const [name, setName] = useState(null);
+
+//     useEffect(() => {
+//         let cancelled = false; // флаг отвечающий за игнорирование результата промиса
+//         fetch(`https://swapi.dev/api/planets/${ID}`)
+//             .then(res => res.json())
+//             .then(data => !cancelled && setName(data.name))
+//         return () => cancelled = true;
+//     }, [ID]);
+
+//     return name;
+// };
+
 
 //? 
 //* - 
