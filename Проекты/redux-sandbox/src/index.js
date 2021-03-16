@@ -1,22 +1,21 @@
-// Функция Reducer принимает стейт и обьект с типой события
-// state - текущее состояние, action - обьект с типом совершаемого действия
-const reducer = (state = 0, action) => {
+import { createStore } from "redux";
 
-    switch (action.type) { // Проверяет тип события и выпоняет действия с состоянием/state
+const reducer = (state = 10, action) => {
+
+    switch (action.type) {
         case 'INC':
             return state + 1;
 
         default:
-            return state //Если тип события не был найдет - вернет состояние в том виде в котором мы его получили
+            return state
     };
 };
 
-let state = reducer(undefined, {});
-console.log(state)
+const store = createStore(reducer);
 
-// передаем в state предыдущий результат вычислений
-state = reducer(state, { type: 'INC' });
-console.log(state)
+store.subscribe(() => { //subscribe - вызывается после каждого изменения state
+    console.log(store.getState())
+});
 
-state = reducer(state, { type: 'INC' });
-console.log(state)
+store.dispatch({ type: 'INC' }) // обновляет state по внутри store по типу переданого действия
+store.dispatch({ type: 'INC' })

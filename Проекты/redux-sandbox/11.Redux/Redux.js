@@ -9,10 +9,14 @@
 //* - Если STATE - undefined нужно вернуть первоначальный (initial) STATE
 //* - Если тип ACTION - неизвестен - нужно вернуть STATE без изменений
 
-//? 
-//* - 
-//* - 
-//* - 
+//? 118. Redux Store
+//* - Store = координирует работу с данными в Redux приложении, == тонкая обертка вокруг функции "REDUCER"
+
+//* - store создает функция createStore(reducer)
+//* - store.getState() - получаем state
+//* - store.dispatch({type: "тип действия"}) - обрабатываем какое либо действие и передаем тип действия
+//* - subscribe - позволяет получать notification(читает state) после каждого обновления в store
+// store.subscribe(() => console.log(store.getState()) );
 
 //? 
 //* - 
