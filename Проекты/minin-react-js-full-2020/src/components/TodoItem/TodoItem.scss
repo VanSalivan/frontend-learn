@@ -1,0 +1,26 @@
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.todo-list-item__title {
+}
+
+.todo-list-item__checkbox {
+    margin-right: 6px;
+}
+
+.todo-list-item__number {
+}
+
+.todo-list-item__button {
+    font-weight: 600;
+}
+
+.done {
+  text-decoration: line-through;
+}
