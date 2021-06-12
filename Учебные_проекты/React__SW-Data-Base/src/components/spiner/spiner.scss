@@ -1,0 +1,108 @@
+@keyframes ldio-unli4u7nowe {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner-body div {
+  box-sizing: border-box !important;
+}
+.spinner-body > div {
+  position: absolute;
+  width: 110.5px;
+  height: 110.5px;
+  top: 29.75px;
+  left: 29.75px;
+  border-radius: 50%;
+  border: 5.1px solid #000;
+  border-color: #e50707 transparent #e50707 transparent;
+  animation: ldio-unli4u7nowe 2.6315789473684212s linear infinite;
+}
+
+.spinner-body > div:nth-child(2),
+.spinner-body > div:nth-child(4) {
+  width: 96.89999999999999px;
+  height: 96.89999999999999px;
+  top: 36.55px;
+  left: 36.55px;
+  animation: ldio-unli4u7nowe 2.6315789473684212s linear infinite reverse;
+}
+.spinner-body > div:nth-child(2) {
+  border-color: transparent #fbfbfb transparent #fbfbfb;
+}
+.spinner-body > div:nth-child(3) {
+  border-color: transparent;
+}
+.spinner-body > div:nth-child(3) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.spinner-body > div:nth-child(3) div:before,
+.spinner-body > div:nth-child(3) div:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5.1px;
+  height: 5.1px;
+  top: -5.1px;
+  left: 47.6px;
+  background: #e50707;
+  border-radius: 50%;
+  box-shadow: 0 105.39999999999999px 0 0 #e50707;
+}
+.spinner-body > div:nth-child(3) div:after {
+  left: -5.1px;
+  top: 47.6px;
+  box-shadow: 105.39999999999999px 0 0 0 #e50707;
+}
+
+.spinner-body > div:nth-child(4) {
+  border-color: transparent;
+}
+.spinner-body > div:nth-child(4) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.spinner-body > div:nth-child(4) div:before,
+.spinner-body > div:nth-child(4) div:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5.1px;
+  height: 5.1px;
+  top: -5.1px;
+  left: 40.8px;
+  background: #fbfbfb;
+  border-radius: 50%;
+  box-shadow: 0 91.8px 0 0 #fbfbfb;
+}
+.spinner-body > div:nth-child(4) div:after {
+  left: -5.1px;
+  top: 40.8px;
+  box-shadow: 91.8px 0 0 0 #fbfbfb;
+}
+.spinner-wrap {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  overflow: hidden;
+  background: none;
+  margin: 0 auto;
+}
+.spinner-body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.spinner-body div {
+  box-sizing: content-box;
+}

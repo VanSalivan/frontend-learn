@@ -1,0 +1,28 @@
+$base: 4px;
+
+.header {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    font-size: $base * 10;
+    font-weight: 700;
+    margin-right: $base * 10;
+  }
+  
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+  }
+
+  &__list-item {
+    font-size: $base * 5;
+
+    & + & {
+      margin-left: $base * 10;
+    }
+  }
+}

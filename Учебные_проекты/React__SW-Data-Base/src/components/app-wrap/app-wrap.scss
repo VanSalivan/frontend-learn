@@ -1,0 +1,14 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.section-outer {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
