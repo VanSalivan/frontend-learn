@@ -5,6 +5,8 @@
 
 ## Проекты: подробности и код внутри папок
 ## 1) Redux-Store
+![Screenshot](Redux-Store.png)
+
 Технологии: `React / React-Redux / React-Router / SCSS / Bootstrap`
 
 ### Функционал
@@ -15,6 +17,8 @@
 
 
 ## 2) React: ToDo-List
+![Screenshot](ToDoList.png)
+
 Технологии: `React / SCSS / Bootstrap`
 
 ### Функционал
@@ -26,6 +30,8 @@
 
 
 ## 3) # Star Wars UI-Data-Base
+![Screenshot](Star-DB.png)
+
 Технологии: `React / React-Router / SCSS / Bootstrap`
 
 ### Функционал
