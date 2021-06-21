@@ -1,39 +1,56 @@
+import { useState, useEffect } from 'react';
 import { MainLayout } from '../components/MainLayout';
-// import { useState, useEffect } from 'react';
 import Link from "next/link";
 
-export default function Posts(props) {
-  // const [posts, setPosts] = useState([]);
+export default function Posts({ posts: serverPost }) {
 
-  // useEffect(() => {
-  //   async function load() {
-  //     const response = await fetch('http://localhost:4200/posts')
-  //     const json = await response.json()
-  //     setPosts(json)
-  //   }
+  const [posts, setPosts] = useState(serverPost);
 
-  //   load()
-  // }, [])
+  //Эффект для запроса если от сервера ничего не пришло
+  useEffect(() => {
+    async function load() {
+      const response = await fetch(`http://localhost:4200/posts`)
+      const data = await response.json()
+      setPosts(data)
+    }
+
+    if (!serverPost) {
+      load()
+    }
+
+  }, [])
+
+  // Loader
+  if (!posts) {
+    return <MainLayout>
+      <p>Loading...</p>
+    </MainLayout>
+  }
 
   return (
     <MainLayout title={'Post Page'}>
       <h1>Posts page</h1>
-      {/* <ul>
-        {posts.map(post => {
+      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+      <ul>
+        {posts.map(post => (
           <li key={post.id}>
             <Link href={`/post/[id]`} as={`/post/${post.id}`}>
               <a>{post.title}</a>
             </Link>
           </li>
-        })}
-      </ul> */}
+        ))}
+      </ul>
     </MainLayout>
   )
 }
 
 
-// Todo Разорбраться почему не передает значения в props
-Posts.getInitialProps = async (ctx) => {
+// Передаем инициализирие статиные данные | исполняется на СЕРВЕРЕ*
+Posts.getInitialProps = async ({ req }) => {
+  if (!req) {
+    return { posts: null }
+  }
+
   const response = await fetch('http://localhost:4200/posts')
   const posts = await response.json()
   return { posts: posts }
