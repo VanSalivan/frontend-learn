@@ -93,8 +93,9 @@
     color: #d17581;
 }
 .itemButton{
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
-    text-align: center;
 }
 .blosd button{
     cursor: default;
