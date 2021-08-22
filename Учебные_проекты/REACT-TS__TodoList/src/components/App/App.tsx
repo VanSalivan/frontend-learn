@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 // Externals
 import { ITodo } from '../../types/data';
+import Button from '../Button';
 import TodoList from '../TodoList';
 
 const App: React.FC = () => {
@@ -54,8 +55,8 @@ const App: React.FC = () => {
   return (
     <div>
       <div>
-        <input type='text' value={value} onChange={handleChange} ref={inputRef} onKeyDown={handleKeyDown}/>
-        <button onClick={addTodo} >Добавить</button>
+        <input type='text' value={value} onChange={handleChange} ref={inputRef} onKeyDown={handleKeyDown} />
+        <Button addTodo={addTodo}/>
       </div>
 
       <TodoList items={list} removeTodo={removeTodo} toogleTodo={toogleTodo}/>
